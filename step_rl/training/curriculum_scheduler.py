@@ -109,8 +109,8 @@ class CurriculumScheduler:
         probs = {}
         for lvl in self.levels:
             e = early.get(lvl, 0.1)
-            l = late.get(lvl, 0.1)
-            probs[lvl] = max(0.05, e + (l - e) * progress)
+            late_val = late.get(lvl, 0.1)
+            probs[lvl] = max(0.05, e + (late_val - e) * progress)
 
         # Mask levels above current unlocked level
         for lvl in list(probs.keys()):

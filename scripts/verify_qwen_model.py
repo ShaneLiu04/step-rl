@@ -3,9 +3,6 @@ Quick verification script for downloaded Qwen2.5-7B-Instruct model.
 Validates: tokenizer loading, 4-bit quantized model loading, forward pass.
 """
 
-import sys
-from pathlib import Path
-
 import pandas  # noqa: F401
 
 # Pre-import pyarrow/pandas to avoid Windows DLL loading race conditions

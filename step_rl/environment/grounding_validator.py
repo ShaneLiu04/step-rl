@@ -5,7 +5,6 @@ Grounding Signal v2.0
 - Smart auto-correction suggestions
 """
 
-import asyncio
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple
 

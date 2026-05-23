@@ -6,20 +6,13 @@ Playwright Web Environment for Step-RL v2.0
 - Security sandbox enforcement with proper domain validation
 """
 
-import asyncio
 import base64
 import json
 import re
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
-from playwright.async_api import (
-    Browser,
-    BrowserContext,
-    Locator,
-    Page,
-    async_playwright,
-)
+from playwright.async_api import Browser, BrowserContext, Page, async_playwright
 
 from step_rl.environment.locator import robust_locate
 from step_rl.utils.logging_utils import get_logger
@@ -241,7 +234,9 @@ class PlaywrightWebEnv:
         js_code = """
         () => {
             const results = [];
-            const tags = ['a', 'button', 'input', 'textarea', 'select', 'label', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'div', 'li', 'td', 'th'];
+            const tags = ['a', 'button', 'input', 'textarea', 'select', 'label',
+                          'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'div',
+                          'li', 'td', 'th'];
             tags.forEach(tag => {
                 document.querySelectorAll(tag).forEach((el, idx) => {
                     if (el.offsetParent === null && tag !== 'div') return;

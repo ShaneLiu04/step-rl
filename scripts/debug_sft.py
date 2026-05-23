@@ -1,7 +1,6 @@
 """Debug script to find the root cause of SFT CUDA assert."""
 
 import json
-import os
 
 import pandas  # noqa: F401
 import pyarrow  # noqa: F401
@@ -19,7 +18,6 @@ MODEL_PATH = "./models/Qwen2.5-7B-Instruct/qwen/Qwen2.5-7B-Instruct"
 
 
 def load_trajectories(data_dir):
-    import random
     from pathlib import Path
 
     trajectories = []

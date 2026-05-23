@@ -34,7 +34,7 @@ class TestEvidentialLayer:
         assert u[0] > u[1]  # lower precision => higher uncertainty
 
     def test_nll_loss_finite(self):
-        layer = EvidentialLayer(in_dim=64, hidden_dim=32)
+        _ = EvidentialLayer(in_dim=64, hidden_dim=32)
         y = torch.tensor([0.5, 0.8])
         gamma = torch.tensor([[0.4], [0.7]])
         nu = torch.tensor([[1.0], [2.0]])

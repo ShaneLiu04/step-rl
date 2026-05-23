@@ -18,7 +18,6 @@ from typing import Any, Deque, Dict, List, Optional, Tuple
 
 import numpy as np
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
 import yaml
 from peft import PeftModel
@@ -219,7 +218,8 @@ class BaseTrainer(ABC):
             else "None"
         )
         return (
-            f"You are a Web automation assistant. Generate the next action based on the task goal and current page state.\n"
+            "You are a Web automation assistant. Generate the next action "
+            "based on the task goal and current page state.\n"
             f"Task: {task.goal}\n"
             f"Difficulty Level: {task.level}\n"
             f"Action History:\n{history_str}\n"

@@ -3,7 +3,6 @@ Unit tests for GroundingValidator v2.0
 Tests: multi-attribute matching, auto-correction, similarity scoring.
 """
 
-import asyncio
 import unittest
 from unittest.mock import AsyncMock, MagicMock
 

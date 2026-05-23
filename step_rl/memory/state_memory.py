@@ -8,7 +8,7 @@ State Memory Module v2.0
 import hashlib
 from collections import OrderedDict, deque
 from dataclasses import dataclass, field
-from typing import Any, Deque, Dict, List, Optional, Tuple
+from typing import Any, Deque, Dict, Optional, Tuple
 
 import numpy as np
 

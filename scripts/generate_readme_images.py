@@ -9,7 +9,6 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
 
 # ---------------------------------------------------------------------------
 # 1. Ablation data — designed to show clear progressive improvement
@@ -401,7 +400,7 @@ def plot_vram_usage():
     x = np.arange(len(components))
     width = 0.35
 
-    bars1 = ax.bar(
+    ax.bar(
         x - width / 2,
         ppo_vram,
         width,
@@ -409,7 +408,7 @@ def plot_vram_usage():
         color="#1976D2",
         edgecolor="white",
     )
-    bars2 = ax.bar(
+    ax.bar(
         x + width / 2,
         grpo_vram,
         width,

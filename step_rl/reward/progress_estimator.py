@@ -7,12 +7,12 @@ Progress Estimator v2.0
 
 import math
 from dataclasses import dataclass
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Dict, Optional, Tuple
 
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from transformers import AutoModel, AutoTokenizer
+from transformers import AutoModel
 
 from step_rl.utils.logging_utils import get_logger
 

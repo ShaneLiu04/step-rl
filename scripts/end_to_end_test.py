@@ -5,14 +5,12 @@ Uses a small model (GPT-2 124M) to validate the full pipeline:
 This runs on CPU or any GPU with minimal VRAM.
 """
 
-import json
 import os
 import random
 import sys
 import tempfile
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, List
 
 import numpy as np
 import pandas  # noqa: F401
@@ -20,7 +18,6 @@ import pandas  # noqa: F401
 # Pre-import pyarrow/pandas to avoid Windows DLL loading race conditions
 import pyarrow  # noqa: F401
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -55,7 +52,7 @@ class MockWebEnv:
         self.step_count = 0
         self.task = task_goal
         return MockObservation(
-            text=f"首页 搜索框 导航栏", url="https://example.com", title="首页"
+            text="首页 搜索框 导航栏", url="https://example.com", title="首页"
         )
 
     async def get_observation(self):
@@ -266,8 +263,8 @@ def test_grpo_training(device, sft_model, tokenizer):
     print("=" * 60)
 
     env = MockWebEnv()
-    grounding = GroundingValidator()
-    state_memory = StateMemory(hash_method="simple", max_states=50)
+    _ = GroundingValidator()
+    _ = StateMemory(hash_method="simple", max_states=50)
     curriculum = CurriculumScheduler(total_epochs=10, seed=42)
 
     tasks = [Task(f"t{i}", f"任务{i}", (i % 4) + 1) for i in range(8)]

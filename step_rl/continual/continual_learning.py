@@ -8,12 +8,10 @@ Continual Learning Interface for Step-RL v2.0
 
 import argparse
 import json
-import os
 import random
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-import numpy as np
 import torch
 import yaml
 from torch.utils.data import DataLoader

@@ -77,7 +77,7 @@ def main():
             f"  Sample {i}: input_ids has negative? {has_neg_in_ids}, labels has negative? {has_neg_in_labels}"
         )
         if has_neg_in_ids:
-            print(f"    ERROR: input_ids contains negative values!")
+            print("    ERROR: input_ids contains negative values!")
             print(f"    input_ids[:20] = {ids[:20]}")
 
     # Load model

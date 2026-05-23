@@ -6,10 +6,8 @@ Benchmark & Evaluation Suite for Step-RL v2.0
 """
 
 import argparse
-import json
-import os
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 import matplotlib.pyplot as plt
 import numpy as np

@@ -6,14 +6,10 @@ Uses MockWebEnv to avoid browser setup for fast demo.
 
 import asyncio
 import json
-import os
 import random
 import sys
-import tempfile
-import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, List
 
 import numpy as np
 import pandas  # noqa: F401
@@ -22,14 +18,13 @@ import pandas  # noqa: F401
 # when transformers triggers tensorflow->keras->pandas->pyarrow chain
 import pyarrow  # noqa: F401
 import torch
-import torch.nn.functional as F
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from step_rl.environment.grounding_validator import GroundingValidator
 from step_rl.memory.state_memory import StateMemory
-from step_rl.reward.progress_estimator import ProgressEstimator, progress_estimator_loss
+from step_rl.reward.progress_estimator import ProgressEstimator
 from step_rl.training.curriculum_scheduler import CurriculumScheduler, Task
 
 MODEL_PATH = "./models/Qwen2.5-7B-Instruct/qwen/Qwen2.5-7B-Instruct"
@@ -532,7 +527,7 @@ def demo_continual_learning():
     banner("DEMO 7: Continual Learning Pipeline")
     print("Online trajectory collection, auto-labeling, and human review queue.")
 
-    from step_rl.continual.continual_learning import ContinualLearner, TrajectoryStore
+    from step_rl.continual.continual_learning import TrajectoryStore
 
     # Mock setup (no real model needed for store demo)
     store = TrajectoryStore(base_dir="./data/demo_trajectories")

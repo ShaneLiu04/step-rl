@@ -1,7 +1,6 @@
 """Debug script 3: test with actual Trainer class."""
 
 import json
-import os
 
 import pandas  # noqa: F401
 import pyarrow  # noqa: F401

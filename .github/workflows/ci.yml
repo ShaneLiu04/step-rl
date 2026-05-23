@@ -84,7 +84,7 @@ jobs:
         run: isort --check-only --diff step_rl/ tests/ scripts/
 
       - name: Run flake8
-        run: flake8 step_rl/ tests/ scripts/ --max-line-length=120 --extend-ignore=E203,W503
+        run: flake8 step_rl/ tests/ scripts/ --max-line-length=120 --extend-ignore=E203,W503,E402
 
       - name: Run mypy (optional)
         run: mypy step_rl/ --ignore-missing-imports || true

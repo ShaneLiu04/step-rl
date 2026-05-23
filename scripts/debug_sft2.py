@@ -5,8 +5,7 @@ import json
 import pandas  # noqa: F401
 import pyarrow  # noqa: F401
 import torch
-from datasets import Dataset as HFDataset
-from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from peft import prepare_model_for_kbit_training
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
 MODEL_PATH = "./models/Qwen2.5-7B-Instruct/qwen/Qwen2.5-7B-Instruct"

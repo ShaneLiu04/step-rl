@@ -1,7 +1,5 @@
 """Tests for security utilities."""
 
-import pytest
-
 from step_rl.utils.security_utils import (
     escape_css_string,
     escape_xpath_string,

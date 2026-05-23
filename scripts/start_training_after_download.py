@@ -3,7 +3,6 @@ Auto-start training pipeline after model download completes.
 Usage: python scripts/start_training_after_download.py
 """
 
-import os
 import subprocess
 import sys
 import time

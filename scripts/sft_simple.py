@@ -9,9 +9,7 @@ import os
 import random
 from pathlib import Path
 
-import numpy as np
 import torch
-import torch.nn.functional as F
 from peft import LoraConfig, get_peft_model
 from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer
