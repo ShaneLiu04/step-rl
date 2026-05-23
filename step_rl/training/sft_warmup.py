@@ -17,12 +17,7 @@ import torch
 import yaml
 from datasets import Dataset as HFDataset
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
-from transformers import (
-    AutoModelForCausalLM,
-    AutoTokenizer,
-    Trainer,
-    TrainingArguments,
-)
+from transformers import AutoModelForCausalLM, AutoTokenizer, Trainer, TrainingArguments
 
 from step_rl.utils.logging_utils import get_logger
 

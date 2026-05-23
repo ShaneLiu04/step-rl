@@ -14,11 +14,11 @@ from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
 from playwright.async_api import (
-    async_playwright,
     Browser,
     BrowserContext,
-    Page,
     Locator,
+    Page,
+    async_playwright,
 )
 
 from step_rl.environment.locator import robust_locate

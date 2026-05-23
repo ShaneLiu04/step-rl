@@ -1,10 +1,10 @@
 """Debug script to find the root cause of SFT CUDA assert."""
 
-import pyarrow  # noqa: F401
-import pandas  # noqa: F401
-
 import json
 import os
+
+import pandas  # noqa: F401
+import pyarrow  # noqa: F401
 import torch
 from datasets import Dataset as HFDataset
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training

@@ -18,10 +18,7 @@ from torch.utils.data import DataLoader, Dataset
 from tqdm import tqdm
 from transformers import AutoTokenizer, get_linear_schedule_with_warmup
 
-from step_rl.reward.progress_estimator import (
-    ProgressEstimator,
-    progress_estimator_loss,
-)
+from step_rl.reward.progress_estimator import ProgressEstimator, progress_estimator_loss
 from step_rl.utils.logging_utils import get_logger
 
 logger = get_logger(__name__)

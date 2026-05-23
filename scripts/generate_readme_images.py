@@ -5,10 +5,11 @@ Generate high-quality benchmark images for README.md
 - Saved to docs/images/ for version-controlled static assets
 """
 
+from pathlib import Path
+
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-from pathlib import Path
 
 # ---------------------------------------------------------------------------
 # 1. Ablation data — designed to show clear progressive improvement

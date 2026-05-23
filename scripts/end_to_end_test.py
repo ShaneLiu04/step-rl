@@ -5,10 +5,6 @@ Uses a small model (GPT-2 124M) to validate the full pipeline:
 This runs on CPU or any GPU with minimal VRAM.
 """
 
-# Pre-import pyarrow/pandas to avoid Windows DLL loading race conditions
-import pyarrow  # noqa: F401
-import pandas  # noqa: F401
-
 import json
 import os
 import random
@@ -19,6 +15,10 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 import numpy as np
+import pandas  # noqa: F401
+
+# Pre-import pyarrow/pandas to avoid Windows DLL loading race conditions
+import pyarrow  # noqa: F401
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

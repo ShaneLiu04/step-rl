@@ -6,7 +6,7 @@ State Memory Module v2.0
 """
 
 import hashlib
-from collections import deque, OrderedDict
+from collections import OrderedDict, deque
 from dataclasses import dataclass, field
 from typing import Any, Deque, Dict, List, Optional, Tuple
 

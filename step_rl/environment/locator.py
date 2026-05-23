@@ -6,7 +6,7 @@ PlaywrightWebEnv and GroundingValidator.
 
 from typing import Any, Dict, Optional, Tuple
 
-from playwright.async_api import Page, Locator
+from playwright.async_api import Locator, Page
 
 from step_rl.utils.logging_utils import get_logger
 from step_rl.utils.security_utils import escape_css_string

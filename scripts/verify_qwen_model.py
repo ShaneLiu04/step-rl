@@ -3,14 +3,14 @@ Quick verification script for downloaded Qwen2.5-7B-Instruct model.
 Validates: tokenizer loading, 4-bit quantized model loading, forward pass.
 """
 
-# Pre-import pyarrow/pandas to avoid Windows DLL loading race conditions
-# when transformers triggers tensorflow→keras→pandas→pyarrow chain
-import pyarrow  # noqa: F401
-import pandas  # noqa: F401
-
 import sys
 from pathlib import Path
 
+import pandas  # noqa: F401
+
+# Pre-import pyarrow/pandas to avoid Windows DLL loading race conditions
+# when transformers triggers tensorflow→keras→pandas→pyarrow chain
+import pyarrow  # noqa: F401
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 

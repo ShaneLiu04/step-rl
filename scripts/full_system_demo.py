@@ -4,11 +4,6 @@ Demonstrates all core components in a single runnable script.
 Uses MockWebEnv to avoid browser setup for fast demo.
 """
 
-# Pre-import pyarrow/pandas to avoid Windows DLL loading race conditions
-# when transformers triggers tensorflow->keras->pandas->pyarrow chain
-import pyarrow  # noqa: F401
-import pandas  # noqa: F401
-
 import asyncio
 import json
 import os
@@ -21,6 +16,11 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 import numpy as np
+import pandas  # noqa: F401
+
+# Pre-import pyarrow/pandas to avoid Windows DLL loading race conditions
+# when transformers triggers tensorflow->keras->pandas->pyarrow chain
+import pyarrow  # noqa: F401
 import torch
 import torch.nn.functional as F
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig

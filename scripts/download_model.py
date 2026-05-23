@@ -3,6 +3,7 @@ Pre-download Qwen2.5-7B-Instruct using ModelScope (fast in China).
 """
 
 import argparse
+
 from modelscope import snapshot_download
 
 
